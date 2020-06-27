@@ -1,0 +1,356 @@
+html,
+body {
+  height: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 600;
+  color: #252525;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+p {
+  font-size: 13.9px;
+  color: #707070;
+}
+
+img {
+  max-width: 100%;
+}
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+  outline: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+/*---------------------
+	Helper CSS
+-----------------------*/
+
+.section-title {
+  margin-bottom: 40px;
+  padding-top: 15px;
+}
+
+.section-title {
+  margin-bottom: 60px;
+}
+
+.section-title h3 {
+  font-weight: 400;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+.property-item {
+  height: 270px;
+  position: relative;
+  margin-bottom: 30px;
+	position: relative;
+	border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.property-item:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,303030+100&0+32,0.9+100 */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 0, 0, 0)),
+    color-stop(32%, rgba(15, 15, 15, 0)),
+    to(rgba(48, 48, 48, 0.9))
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(15, 15, 15, 0) 32%,
+    rgba(48, 48, 48, 0.9) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(15, 15, 15, 0) 32%,
+    rgba(48, 48, 48, 0.9) 100%
+  );
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#e6303030', GradientType=0);
+  /* IE6-9 */
+}
+
+.property-item .sale-notic,
+.property-item .rent-notic {
+  margin: 30px;
+}
+
+.sale-notic,
+.rent-notic {
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+  background: #e94646;
+  padding: 7px 13px;
+  display: inline-block;
+  border-radius: 2px;
+  position: relative;
+  z-index: 3;
+}
+
+.set-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+.property-info {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 30px;
+  padding-bottom: 20px;
+  z-index: 5;
+}
+
+.property-info h5 {
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+
+.property-info p {
+  margin-bottom: 0;
+}
+
+.property-info p i {
+  color: #30caa0;
+  margin-right: 5px;
+}
+
+.property-info .info-warp {
+	flex: 1 1 70%;
+}
+
+.property-info .property-description {
+	padding-bottom: 5px;
+}
+
+.property-info .price {
+  flex: 1 1 30%;
+  background: #30caa0;
+  padding: 12px;
+  min-width: 110px;
+  text-align: center;
+	border-radius: 2px;
+}
+
+.spad {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.text-white h1,
+.text-white h2,
+.text-white h3,
+.text-white h4,
+.text-white h5,
+.text-white p,
+.text-white span,
+.text-white li,
+.text-white a {
+  color: #fff;
+}
+
+.filter-search {
+  position: relative;
+  z-index: 2;
+}
+
+.filter-form {
+  padding: 20px;
+  background: #30caa0;
+  border-radius: 3px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-form > * {
+  flex: 1 1 15%;
+  max-width: 15%;
+  margin-right: 10px;
+  font-size: 14px;
+  height: 50px;
+  border: none;
+}
+
+.search {
+  flex: 1 1 30%;
+  max-width: 30%;
+  border-radius: 2px;
+  padding: 5px 10px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+.search input {
+  border: none;
+  width: 100%;
+}
+
+.slider {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.slider p {
+  color: #fff;
+  margin: 0;
+  text-align: center;
+}
+
+.price-range {
+  font-size: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.filter-form select {
+  border-radius: 2px;
+  padding: 0 5px;
+}
+
+.submitButton {
+  display: none;
+}
+
+/* Buttons */
+
+.site-btn {
+	position: relative;
+	display: inline-block;
+	padding: 15px 30px;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 16px;
+	letter-spacing: 2px;
+	border-radius: 3px;
+	min-width: 120px;
+	text-align: center;
+	background: #30caa0;
+	cursor: pointer;
+	border: none;
+	color: #fff;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .property-info .price {
+    float: left;
+    margin-top: 15px;
+	}
+	.property-info .property-description {
+		display: none;
+	}
+  /* .filter-form select {
+    width: calc(15% - 10px);
+  } */
+}
+
+@media only screen and (max-width: 767px) {
+  .filter-form {
+    display: block;
+  }
+
+  .filter-form > * {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .slider {
+    max-width: 100%;
+  }
+  /* .filter-form input,
+  .filter-form select {
+    width: 100%;
+    margin-bottom: 20px;
+  } */
+}
+
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1170px;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  /* .filter-form select {
+    width: calc(15% - 10px);
+  } */
+}

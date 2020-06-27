@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AlleghenyCityRealty - Manage Building</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="AlleghenyCityRealty - Manage Building" />
+    <meta name="keywords" content="AlleghenyCityRealty, Manage-Building" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="filter-search">
+      <div class="container">
+        <form class="filter-form" onsubmit="onSubmit(event)">
+          <select onchange="changeHandler()" id="numOfBeds">
+            <option value="0">Beds</option>
+            <option value="0">0+</option>
+            <option value="1">1+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+            <option value="5">5+</option>
+          </select>
+          <select onchange="changeHandler()" id="numOfBaths">
+            <option value="0">Baths</option>
+            <option value="0">0+</option>
+            <option value="1">1+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+            <option value="5">5+</option>
+          </select>
+          <select onchange="changeHandler()" id="typeOfProperty">
+            <option value="">Type</option>
+          </select>
+          <div class="slider">
+            <p>Price</p>
+            <p class="price-range">
+              <span>$700</span>
+              <span id="selectedPrice">$700</span>
+              <span>$1800</span>
+            </p>
+            <input
+              onchange="changeHandler()"
+              type="range"
+              min="700"
+              max="1800"
+              step="100"
+              value="700"
+              id="priceRange"
+            />
+          </div>
+          <div class="search">
+            <input
+              type="text"
+              onchange="changeHandler()"
+              placeholder="Enter a zip/code or city/state..."
+              id="search"
+            />
+            <i class="fa fa-search" onclick="search()"></i>
+          </div>
+          <input type="submit" class="submitButton" id="submitButton"/>
+        </form>
+      </div>
+    </div>
+
+    <section class="properties-section spad">
+      <div class="container">
+        <div class="row" id="properites-list"></div>
+      </div>
+    </section>
+    <!-- Properties section end -->
+
+    <!--====== Javascripts ======-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
