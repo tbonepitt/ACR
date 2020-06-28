@@ -52,7 +52,7 @@ const typeOfProperties = [];
 
 const changePropery = (selectedAddress) => {
   window.localStorage.setItem('property', selectedAddress);
-  window.location.href = 'property.html';
+  window.location.href = '/property';
 };
 
 const fetchElement = (elementID) => document.getElementById(elementID);
@@ -204,11 +204,12 @@ const showProperties = (properties, update = false) => {
 
 const url = window.location.href;
 const currentPage = url.substring(url.lastIndexOf('/') + 1);
-if (currentPage === 'index.html') {
-  showProperties(allProperties);
+console.log(currentPage);
+if (currentPage) {
+ showProperties(allProperties);
 } else {
   showProperty();
-}
+};
 
 const search = () => {
   document.getElementById("submitButton").click();
