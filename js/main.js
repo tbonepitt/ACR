@@ -1,3 +1,7 @@
+$('.carousel').carousel({
+  interval: 5000
+})
+
 const xmlApi =
   "https://alleghenycityrealty.managebuilding.com/Resident/PublicPages/XMLRentals.ashx";
 
@@ -50,12 +54,18 @@ const properitesList = document.getElementById("properites-list");
 const allProperties = jsonData.PhysicalProperty.Property;
 const typeOfProperties = [];
 
+const fetchElement = (elementID) => document.getElementById(elementID);
+
 const changePropery = (selectedAddress) => {
   window.localStorage.setItem('property', selectedAddress);
-  window.location.href = '/property';
+  const property = fetchElement('property');
+  const home = fetchElement('home');
+  showProperty();
+  home.style.display = 'none';
+  property.style.display = 'block';
 };
 
-const fetchElement = (elementID) => document.getElementById(elementID);
+
 
 const showProperty = () => {
   const selectedProperty = window.localStorage.getItem('property');
@@ -105,7 +115,6 @@ const showProperty = () => {
   slidesArray.map((file, i) => {
     filesChunk.push(files.splice(0, 4))
   })
-  console.log(filesChunk);
   if (fetchElement('intro_slider').innerHTML === '') {
     filesChunk.map((chunk, i) => {
       fetchElement('intro_slider').innerHTML =
@@ -133,6 +142,19 @@ const showProperty = () => {
         `<li><a href="#">${Description['#text']}</a></li>`
     });
   }
+
+  $(".fancybox").fancybox({
+    openEffect: "none",
+    closeEffect: "none"
+  });
+
+  $(".zoom").hover(function () {
+
+    $(this).addClass('transition');
+  }, function () {
+
+    $(this).removeClass('transition');
+  });
 }
 
 const showProperties = (properties, update = false) => {
@@ -204,12 +226,8 @@ const showProperties = (properties, update = false) => {
 
 const url = window.location.href;
 const currentPage = url.substring(url.lastIndexOf('/') + 1);
-console.log(currentPage);
-if (currentPage) {
- showProperties(allProperties);
-} else {
-  showProperty();
-};
+
+showProperties(allProperties);
 
 const search = () => {
   document.getElementById("submitButton").click();
